@@ -11,11 +11,10 @@ Gem::Specification.new do |s|
   s.description = %q{Sinatra web frontend for God}
   s.email = %q{jnewland@gmail.com}
   s.executables = ["god_web"]
-  s.extra_rdoc_files = ["Manifest.txt", "Readme.txt", "History.txt"]
-  s.files = ["bin/god_web", "lib/sinatra_http_auth.rb", "Rakefile", "Manifest.txt", "Readme.txt", "History.txt"]
-  s.has_rdoc = true
+  s.extra_rdoc_files = ["Readme.txt"]
+  s.files = ["bin/god_web", "lib/sinatra_http_auth.rb", "Readme.txt"]
+  s.has_rdoc = false
   s.homepage = %q{http://github.com/jnewland/god_web}
-  s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{god_web}
   s.rubygems_version = %q{1.1.0}
@@ -23,5 +22,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency(%q<god>, [">= 0.7.3"])
   s.add_dependency(%q<sinatra>, [">= 0.2.2"])
-  s.add_dependency(%q<hoe>, [">= 1.5.1"])
 end

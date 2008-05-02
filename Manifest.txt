@@ -1,6 +1,0 @@
-bin/god_web
-lib/sinatra_http_auth.rb
-Rakefile
-Manifest.txt
-Readme.txt
-History.txt
