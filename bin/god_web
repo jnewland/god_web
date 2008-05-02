@@ -5,7 +5,7 @@ require 'god'
 require 'sinatra'
 require 'stringio'
 #included until http://sinatra.lighthouseapp.com/projects/9779/tickets/16-patch-http-authentication is in a released version
-require File.dirname(__FILE__) + '../lib/sinatra_http_auth'
+require File.dirname(__FILE__) + '/../lib/sinatra_http_auth'
 
 god_port = ENV['GOD_PORT'] || 17165
 
