@@ -26,11 +26,17 @@ before do
   end
 end
 
-get '/' do
+def with_captured_stdout(&block)
   io = StringIO.new
   $stdout = io
-  response.header['Content-Type'] = 'text/plain'
-  God::CLI::Command.new('status', {:port => config['god_port']}, [])
+  yield
   $stdout = STDOUT
   io.string
+end
+
+get '/' do
+  with_captured_stdout do
+    response.header['Content-Type'] = 'text/plain'
+    God::CLI::Command.new('status', {:port => config['god_port']}, [])
+  end
 end
