@@ -15,6 +15,10 @@ Sinatra web frontend for God
 
 * sudo gem install jnewland-god_web -s http://gems.github.com
 
+== USAGE:
+
+* sudo god_web -p PORT_TO_RUN_ON -e production
+
 == LICENSE:
 
 (The MIT License)
