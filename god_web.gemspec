@@ -1,4 +1,3 @@
-(in /Users/jnewland/src/god_web)
 Gem::Specification.new do |s|
   s.name = %q{god_web}
   s.version = "0.0.1"
