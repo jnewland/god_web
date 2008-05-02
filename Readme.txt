@@ -19,6 +19,16 @@ Sinatra web frontend for God
 
 * sudo god_web -p PORT_TO_RUN_ON -e production
 
+Optionally, you can password protect your god_web instance. To do so, create
+a YAML config file with username and password keys, like so:
+
+username: foo
+password: sekret
+
+Then provide that yaml file as the first argument to god_web:
+
+* sudo god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production
+
 == LICENSE:
 
 (The MIT License)

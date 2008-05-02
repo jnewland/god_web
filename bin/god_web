@@ -4,14 +4,25 @@ require 'rubygems'
 require 'god'
 require 'sinatra'
 require 'stringio'
+require 'yaml'
 #included until http://sinatra.lighthouseapp.com/projects/9779/tickets/16-patch-http-authentication is in a released version
 require File.dirname(__FILE__) + '/../lib/sinatra_http_auth'
 
-god_port = ENV['GOD_PORT'] || 17165
+config = {
+  'god_port' =>  17165,
+  'username' =>  nil,
+  'password' =>  nil
+}
+begin
+  config.merge!(YAML.load(File.read(ARGV[0])))
+rescue
+end
 
 before do
-  authenticate_or_request_with_http_basic "GodWeb" do
-    |user, pass| pass == "admin"
+  unless config['username'].nil? && config['password'].nil?
+    authenticate_or_request_with_http_basic "GodWeb" do
+      |user, pass| user == config['username'] && pass == config['password']
+    end
   end
 end
 
@@ -19,7 +30,7 @@ get '/' do
   io = StringIO.new
   $stdout = io
   response.header['Content-Type'] = 'text/plain'
-  God::CLI::Command.new('status', {:port => god_port}, [])
+  God::CLI::Command.new('status', {:port => config['god_port']}, [])
   $stdout = STDOUT
   io.string
 end
