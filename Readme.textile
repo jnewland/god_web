@@ -1,0 +1,42 @@
+h1. god_web
+
+* http://github.com/jnewland/god_web
+
+h2. Descriptions
+
+Sinatra web frontend for God
+
+h2. Requirements
+
+* God
+* Sinatra
+
+h2. Install
+
+* @sudo gem install jnewland-god_web -s http://gems.github.com@
+
+h2. Usage
+
+* @sudo god_web -p PORT_TO_RUN_ON -e production@
+
+Optionally, you can password protect your god_web instance. To do so, create
+a YAML config file with username and password keys, like so:
+
+<code>
+<pre>
+  username: foo
+  password: sekret
+</pre>
+</code>
+
+Then provide that yaml file as the first argument to god_web:
+
+* sudo @god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
+
+h3. Author
+
+"Jesse Newland":http://jnewland.com/
+
+h3. License
+
+"WTFPL":http://sam.zoy.org/wtfpl/
