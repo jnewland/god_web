@@ -16,9 +16,24 @@ get '/' do
   show(:status)
 end
 
+get '/w/:watch' do
+  @watch = params["watch"]
+  @status = GODWEB.status[@watch][:state]
+  @commands = GodWeb.possible_statuses(@status)
+  show(:watch, "#{@watch} [#{@status}]")
+end
+
+get '/w/:watch/:command' do
+  @watch = params["watch"]
+  @command = params["command"]
+  @success = GODWEB.send(@command, @watch)
+  show(:command, "#{@command}ing #{@watch}")
+end
+
 private
 
   def show(template, title = 'GodWeb')
     @title = title
     erb(template)
   end
+  

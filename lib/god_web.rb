@@ -23,13 +23,22 @@ class GodWeb
     end
   end
 
+  def self.possible_statuses(status)
+    case status
+    when :up
+      return %w{stop restart unmonitor}
+    when :unmonitored
+      return %w{start remove}
+    end
+  end
+
 private
 
   def method_missing(meth,*args)
-    if %w{load status log quit terminate}.include?(meth.to_s)
+    if %w{status log quit terminate}.include?(meth.to_s)
       ping
       send("#{meth}_command")
-    elsif %w{start stop restart monitor unmonitor remove}.include?(meth.to_s)
+    elsif %w{start stop restart unmonitor remove}.include?(meth.to_s)
       ping
       lifecycle_command(args.first, meth.to_s)
     else

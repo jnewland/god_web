@@ -1,11 +1,19 @@
 <html>
   <head>
     <title><%= @title %></title>
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <style type="text/css" media="screen">@import "/iui/iui.css";</style>
+    <script type="application/x-javascript" src="/iui/iui.js"></script>
   </head>
   <body>
-    <ul>
+    <div class="toolbar">
+         <h1 id="pageTitle"><%= @title %></h1>
+         <a id="backButton" class="button" href="#"></a>
+         <a class="button" href="/" target="_self">Refresh</a>
+     </div>
+    <ul id="home" selected="true">
     <% @status.each do |watch, status| %>
-      <li id="<%= watch %>" class="<%= status[:state] %>"><%= watch %> - <%= status[:state] %></li>
+      <li id="<%= watch %>" class="<%= status[:state] %>"><a href="/w/<%= watch %>"><%= watch %></a> [<%= status[:state] %>]</li>
     <% end %>
     </ul>
   </body>

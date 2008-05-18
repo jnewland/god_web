@@ -1,0 +1,5 @@
+<ul id="<%= @watch %>_commands" title="<%= @title %>">
+  <% @commands.each do |command| %>
+    <li id="<%= command %>_<%= @watch %>" class="<%= command %>"><a href="/w/<%= @watch %>/<%= command %>"><%= command %></a></li>
+  <% end %>
+</ul>
