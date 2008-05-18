@@ -21,3 +21,6 @@ rescue
 end
 
 GODWEB = GodWeb.new(config)
+
+Sinatra.application.options.public = File.dirname(__FILE__) + "/../public"
+Sinatra.application.options.views = File.dirname(__FILE__) + "/../views"
