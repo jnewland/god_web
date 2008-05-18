@@ -24,14 +24,14 @@ a YAML config file with username and password keys, like so:
 
 <code>
 <pre>
-  username: foo
-  password: sekret
+username: foo
+password: sekret
 </pre>
 </code>
 
 Then provide that yaml file as the first argument to god_web:
 
-* sudo @god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
+* @sudo god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
 
 h3. Author
 
