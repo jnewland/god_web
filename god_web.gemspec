@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{Sinatra web frontend for God}
   s.email = %q{jnewland@gmail.com}
   s.executables = ["god_web"]
-  s.extra_rdoc_files = ["Readme.txt"]
+  s.extra_rdoc_files = ["Readme.textile"]
   s.files = [
     "bin/god_web",
     "lib/environment.rb",
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
     "public/iui/toolButton.png",
     "public/iui/toolbar.png",
     "public/iui/whiteButton.png",
-    "Readme.txt"
+    "Readme.textile"
   ]
   s.has_rdoc = false
   s.homepage = %q{http://github.com/jnewland/god_web}
