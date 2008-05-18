@@ -12,7 +12,13 @@ Gem::Specification.new do |s|
   s.email = %q{jnewland@gmail.com}
   s.executables = ["god_web"]
   s.extra_rdoc_files = ["Readme.txt"]
-  s.files = ["bin/god_web", "lib/sinatra_http_auth.rb", "Readme.txt"]
+  s.files = [
+    "bin/god_web",
+    "lib/environment.rb",
+    "lib/god_web.rb",
+    "lib/sinatra_http_auth.rb",
+    "Readme.txt"
+  ]
   s.has_rdoc = false
   s.homepage = %q{http://github.com/jnewland/god_web}
   s.require_paths = ["lib"]
