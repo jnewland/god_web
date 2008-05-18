@@ -12,7 +12,13 @@ before do
 end
 
 get '/' do
-  @status = GODWEB.status
+  @statuses = GODWEB.status
+  @watches = []
+  @statuses.each do |watch, status|
+    @watches << watch.to_s
+  end
+  @watches.sort!
+  @groups = GODWEB.groups
   show(:status)
 end
 
@@ -23,10 +29,18 @@ get '/w/:watch' do
   show(:watch, "#{@watch} [#{@status}]")
 end
 
+get '/g/:group' do
+  @watch = @group = params["group"]
+  @status = nil
+  @commands = GodWeb.possible_statuses(@status)
+  show(:watch, "#{@group} [group]")
+end
+
 get '/w/:watch/:command' do
   @watch = params["watch"]
   @command = params["command"]
   @success = GODWEB.send(@command, @watch)
+  @success = false if @success == []
   show(:command, "#{@command}ing #{@watch}")
 end
 

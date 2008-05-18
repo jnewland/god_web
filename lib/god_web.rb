@@ -29,13 +29,15 @@ class GodWeb
       return %w{stop restart unmonitor}
     when :unmonitored
       return %w{start remove}
+    else
+      return %w{start stop restart}
     end
   end
 
 private
 
   def method_missing(meth,*args)
-    if %w{status log quit terminate}.include?(meth.to_s)
+    if %w{groups status log quit terminate}.include?(meth.to_s)
       ping
       send("#{meth}_command")
     elsif %w{start stop restart unmonitor remove}.include?(meth.to_s)
@@ -46,8 +48,16 @@ private
     end
   end
 
+  def groups_command
+    groups = []
+    @server.groups.each do |key, value|
+      groups << key
+    end
+    groups.sort
+  end
+
   def status_command
-    watches = @server.status
+    @server.status
   end
 
   #TODO
