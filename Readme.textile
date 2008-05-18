@@ -1,8 +1,4 @@
-h1. god_web
-
-* http://github.com/jnewland/god_web
-
-h2. Descriptions
+h2. Description
 
 Sinatra web frontend for God
 
