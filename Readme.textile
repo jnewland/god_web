@@ -9,11 +9,11 @@ h2. Requirements
 
 h2. Install
 
-* @sudo gem install jnewland-god_web -s http://gems.github.com@
+@sudo gem install jnewland-god_web -s http://gems.github.com@
 
 h2. Usage
 
-* @sudo god_web -p PORT_TO_RUN_ON -e production@
+@sudo god_web -p PORT_TO_RUN_ON -e production@
 
 Optionally, you can password protect your god_web instance. To do so, create
 a YAML config file with username and password keys, like so:
@@ -27,7 +27,7 @@ password: sekret
 
 Then provide that yaml file as the first argument to god_web:
 
-* @sudo god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
+@sudo god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
 
 h3. Author
 
