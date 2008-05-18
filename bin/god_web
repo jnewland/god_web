@@ -1,42 +1,24 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'god'
-require 'sinatra'
-require 'stringio'
-require 'yaml'
-#included until http://sinatra.lighthouseapp.com/projects/9779/tickets/16-patch-http-authentication is in a released version
-require File.dirname(__FILE__) + '/../lib/sinatra_http_auth'
-
-config = {
-  'god_port' =>  17165,
-  'username' =>  nil,
-  'password' =>  nil
-}
-begin
-  config.merge!(YAML.load(File.read(ARGV[0])))
-rescue
-end
+require File.dirname(__FILE__) + '/../lib/environment'
 
 before do
-  unless config['username'].nil? && config['password'].nil?
+  unless GODWEB_CONFIG['username'].nil? && GODWEB_CONFIG['password'].nil?
     authenticate_or_request_with_http_basic "GodWeb" do
-      |user, pass| user == config['username'] && pass == config['password']
+      |user, pass| user == GODWEB_CONFIG['username'] && pass == GODWEB_CONFIG['password']
     end
   end
-end
-
-def with_captured_stdout(&block)
-  io = StringIO.new
-  $stdout = io
-  yield
-  $stdout = STDOUT
-  io.string
+  GODWEB.ping
 end
 
 get '/' do
-  with_captured_stdout do
-    response.header['Content-Type'] = 'text/plain'
-    God::CLI::Command.new('status', {:port => config['god_port']}, [])
-  end
+  @status = GODWEB.status
+  show(:status)
 end
+
+private
+
+  def show(template, title = 'GodWeb')
+    @title = title
+    erb(template)
+  end

@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title><%= @title %></title>
+  </head>
+  <body>
+    <ul>
+    <% @status.each do |watch, status| %>
+      <li id="<%= watch %>" class="<%= status[:state] %>"><%= watch %> - <%= status[:state] %></li>
+    <% end %>
+    </ul>
+  </body>
+</html>
