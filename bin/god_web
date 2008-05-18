@@ -34,6 +34,6 @@ private
 
   def show(template, title = 'GodWeb')
     @title = title
-    erb(template)
+    erb(template, :views_directory => File.dirname(__FILE__) + "/../views")
   end
   
