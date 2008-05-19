@@ -2,6 +2,11 @@ h2. Description
 
 Sinatra web frontend for God
 
+h2. Screenshots
+
+"!http://farm3.static.flickr.com/2281/2505507050_2f8fc39795_m.jpg!":http://www.flickr.com/photos/jnewland/2505507050/
+"!http://farm3.static.flickr.com/2420/2504730261_06ac1ba923_m.jpg!":http://www.flickr.com/photos/jnewland/2504730261/
+
 h2. Requirements
 
 * God
