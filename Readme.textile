@@ -1,6 +1,6 @@
 h2. Description
 
-Sinatra web frontend for God
+iPhone friendly web UI "God":http://god.rubyforge.org/
 
 h2. Screenshots
 
@@ -9,42 +9,42 @@ h2. Screenshots
 
 h2. Requirements
 
-* God
-* Sinatra
+* "God":http://god.rubyforge.org/
+* "Sinatra":http://sinatrarb.com/
 
 h2. Install
 
-<code>
 <pre>
+<code>
 git clone git://github.com/jnewland/god_web.git
 cd god_web
 gem build god_web.gemspec
 sudo gem install -l god_web-*.gem
-</pre>
 </code>
+</pre>
 
 h2. Usage
 
 @sudo god_web -p PORT_TO_RUN_ON -e production@
 
-Optionally, you can password protect your god_web instance. To do so, create
+Optionally, you can password protect your @god_web@ instance. To do so, create
 a YAML config file with username and password keys, like so:
 
-<code>
 <pre>
+<code>
 username: foo
 password: sekret
-</pre>
 </code>
+</pre>
 
-Then provide that yaml file as the first argument to god_web:
+Then provide that yaml file as the first argument to @god_web@:
 
 @sudo god_web /path/to/god_web.yml -p PORT_TO_RUN_ON -e production@
 
-You might want to monitor god_web to make sure it stays up:
+You might want to monitor @god_web@ to make sure it stays up:
 
-<code>
 <pre>
+<code>
 God.watch do |w|
   w.name              = "god_web"
   w.interval          = 1.minute
@@ -82,8 +82,8 @@ God.watch do |w|
     end
   end
 end
-</pre>
 </code>
+</pre>
 
 h3. Author
 
