@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: apple-touch-icon.png
+desc: Icon designed for iPhone/iPod Touch home screen
+type: :feature
+component: god_web
+release: 0.2.0
+reporter: Jesse Newland <jnewland@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-05-19 13:59:10.503344 Z
+references: []
+
+id: 28789de6ef59a981f26031fdf68030a1474251e8
+log_events: 
+- - 2008-05-19 13:59:14.619303 Z
+  - Jesse Newland <jnewland@gmail.com>
+  - created
+  - ""

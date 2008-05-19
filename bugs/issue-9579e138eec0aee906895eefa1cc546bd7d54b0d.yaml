@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: meta tasks
+desc: allow access to quit/terminate actions.
+type: :feature
+component: god_web
+release: 0.2.0
+reporter: Jesse Newland <jnewland@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-05-19 14:03:55.268667 Z
+references: []
+
+id: 9579e138eec0aee906895eefa1cc546bd7d54b0d
+log_events: 
+- - 2008-05-19 14:03:56.372991 Z
+  - Jesse Newland <jnewland@gmail.com>
+  - created
+  - ""

@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: pulse page
+desc: A simple action that returns a 200 if god is running, 500 if not. For remote monitoring purposes.
+type: :feature
+component: god_web
+release: 0.2.0
+reporter: Jesse Newland <jnewland@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-05-19 14:02:00.174940 Z
+references: []
+
+id: b13b98759d3cf194cfee1bc00f0245f4b19f6cd2
+log_events: 
+- - 2008-05-19 14:02:02.216946 Z
+  - Jesse Newland <jnewland@gmail.com>
+  - created
+  - ""

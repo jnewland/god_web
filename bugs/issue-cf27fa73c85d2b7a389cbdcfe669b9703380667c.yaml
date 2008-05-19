@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: rspec
+desc: can has specs?
+type: :bugfix
+component: god_web
+release: 
+reporter: Jesse Newland <jnewland@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-05-19 14:07:43.410714 Z
+references: []
+
+id: cf27fa73c85d2b7a389cbdcfe669b9703380667c
+log_events: 
+- - 2008-05-19 14:07:44.578819 Z
+  - Jesse Newland <jnewland@gmail.com>
+  - created
+  - ""

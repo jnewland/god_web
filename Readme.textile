@@ -85,6 +85,23 @@ end
 </code>
 </pre>
 
+h2. Contributing
+
+god_web uses "ditz":http://ditz.rubyforge.org for issue tracking. Fork
+god_web, clone your copy and then run:
+
+@ditz todo@
+
+For more details on a specific issue:
+
+@ditz show god_web-1@
+
+Make your changes that fix a bug, then resolve it.
+
+@ditz close god_web-1@
+
+Commit, push your changes to GitHub, then send a pull request!
+
 h3. Author
 
 "Jesse Newland":http://jnewland.com/

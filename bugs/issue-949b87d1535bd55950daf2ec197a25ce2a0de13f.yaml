@@ -1,0 +1,18 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: confirmation page for commands
+desc: an interstatial confirmation page to ensure no one restarts their mongrels because of a fat finger
+type: :feature
+component: god_web
+release: 0.2.0
+reporter: Jesse Newland <jnewland@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2008-05-19 14:05:18.915980 Z
+references: []
+
+id: 949b87d1535bd55950daf2ec197a25ce2a0de13f
+log_events: 
+- - 2008-05-19 14:05:20.627880 Z
+  - Jesse Newland <jnewland@gmail.com>
+  - created
+  - ""
