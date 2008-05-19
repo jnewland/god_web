@@ -28,7 +28,7 @@ class GodWeb
     when :up
       return %w{stop restart unmonitor}
     when :unmonitored
-      return %w{start remove}
+      return %w{start monitor}
     else
       return %w{start stop restart}
     end
@@ -40,7 +40,7 @@ private
     if %w{groups status log quit terminate}.include?(meth.to_s)
       ping
       send("#{meth}_command")
-    elsif %w{start stop restart unmonitor remove}.include?(meth.to_s)
+    elsif %w{start stop restart unmonitor monitor}.include?(meth.to_s)
       ping
       lifecycle_command(args.first, meth.to_s)
     else
