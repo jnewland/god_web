@@ -20,7 +20,7 @@
 	<% end %>
       <li class="group">Watches</li>
     <% @watches.each do |watch| %>
-      <li id="<%= watch %>" class="<%= @statuses[watch][:state] %>"><a href="/w/<%= watch %>"><%= watch %></a> [<%= @statuses[watch][:state] %>]</li>
+      <li id="<%= watch %>" class="<%= @statuses[watch][:state] %>"><a href="/w/<%= watch %>"><%= watch %>[<%= @statuses[watch][:state] %>]</a></li>
     <% end %>
     </ul>
   </body>
