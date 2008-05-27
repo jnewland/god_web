@@ -12,10 +12,12 @@
          <a class="button" href="/" target="_self">Refresh</a>
      </div>
     <ul id="home" selected="true" title="GodWeb">
-      <li class="group">Groups</li>
-    <% @groups.each do |watch| %>
-      <li id="<%= watch %>"><a href="/g/<%= watch %>"><%= watch %></a></li>
-    <% end %>
+	<% unless @groups.empty? %>
+	      <li class="group">Groups</li>
+	    <% @groups.each do |watch| %>
+	      <li id="<%= watch %>"><a href="/g/<%= watch %>"><%= watch %></a></li>
+	    <% end %>
+	<% end %>
       <li class="group">Watches</li>
     <% @watches.each do |watch| %>
       <li id="<%= watch %>" class="<%= @statuses[watch][:state] %>"><a href="/w/<%= watch %>"><%= watch %></a> [<%= @statuses[watch][:state] %>]</li>
