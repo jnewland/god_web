@@ -3,7 +3,7 @@
 require File.dirname(__FILE__) + '/../lib/environment'
 
 before do
-  unless GODWEB_CONFIG['username'].nil? && GODWEB_CONFIG['password'].nil?
+  unless (GODWEB_CONFIG['username'].nil? && GODWEB_CONFIG['password'].nil?) || self.request.path_info == '/heartbeat'
     authenticate_or_request_with_http_basic "GodWeb" do
       |user, pass| user == GODWEB_CONFIG['username'] && pass == GODWEB_CONFIG['password']
     end
@@ -44,10 +44,14 @@ get '/w/:watch/:command' do
   show(:command, "#{@command}ing #{@watch}")
 end
 
+get '/heartbeat' do
+  @statuses = GODWEB.status
+  'OK'
+end
+
 private
 
   def show(template, title = 'GodWeb')
     @title = title
     erb(template)
   end
-  
