@@ -12,7 +12,7 @@ class GodWeb
     God.watch do |w|
       w.name              = "god_web"
       w.interval          = 1.minute
-      w.start             = "god_web -e production -p 8888"
+      w.start             = start_string
       w.start_grace       = 10.seconds
       w.restart_grace     = 10.seconds
 
